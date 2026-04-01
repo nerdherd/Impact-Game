@@ -9,15 +9,5 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #f0f0f0;
-}
-
-.column{
-    display: flex;
-    flex-direction: column;
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
+    background: #081535;
 }

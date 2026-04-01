@@ -1,4 +1,4 @@
-# NerdHerd Quiz
+# NerdHerd-Quiz
 
 ## Getting Started
 
