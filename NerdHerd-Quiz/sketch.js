@@ -54,8 +54,8 @@ function setup() {
 }
 
 function draw() {
-    if(gameState != null){       
-        //console.log(gameState);
+    if(windowHeight > windowWidth){
+        showRotateMessage();
     }
 }
 
@@ -165,4 +165,19 @@ function runState(state){
 
 function currentScore(){
     return `You got ${score} out of ${QUESTIONS} correct!`;
+}
+
+
+function showRotateMessage(){
+    push();
+
+    fill(0, 0, 0, 200);
+    rect(0, 0, width, height);
+
+    fill(255);
+    textAlign(CENTER, CENTER);
+    textSize(height * 0.05);
+    text("Please rotate your device", width/2, height/2);
+
+    pop();
 }
