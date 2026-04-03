@@ -59,8 +59,7 @@ function draw() {
     }
 }
 
-function mouseClicked(event){
-
+function smthHappen(){
     if(within(xWidth*(3.25/8.0), yHeight*(4.0/6.0), xWidth*0.5, yHeight*(1.0/6.0)) && !playing){
         playing = true;
         runState(gameState);
@@ -105,8 +104,17 @@ function mouseClicked(event){
         //console.log("C");
         //console.log(gameState); 
     }
-
 }
+
+function touchStarted(){
+    smthHappen();
+}
+
+function mousePressed(){
+    smthHappen();
+}
+
+
 
 function showGame(){
     image(bg, 0, 0, xWidth, yHeight);
