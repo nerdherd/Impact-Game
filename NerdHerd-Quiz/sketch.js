@@ -17,7 +17,7 @@ const sprites = [];
 //0 1 2 3
 
 const script = [
-    ["Hi am the nerd of the herd", 0, false, 1],
+    ["Hi am the nerd of the herd", 4, false, 1],
     ["We at BirdBird herdnerd do a lot of things but we mainly make robots", 1, false, 2],
     ["Now tell me what is it that we make", 1, true, "Birds", 3, "Diet Coke", 3, "Robots", 4, "idfk", 3, 2],
     ["What no why", 3, false, 5],
@@ -32,6 +32,7 @@ function preload() {
     sprites.push(loadImage('assets/GHappy.png'));
     sprites.push(loadImage('assets/GSad.png'));
     sprites.push(loadImage('assets/GScared.png'));
+    sprites.push(loadImage('assets/GReeting.png'));
 
 
 
@@ -119,7 +120,7 @@ function mousePressed(){
 function showGame(){
     image(bg, 0, 0, xWidth, yHeight);
     image(logo, xWidth*(3.75/8.0), yHeight*(1.0/6.0));
-    image(sprites[0], xWidth*(1.0/16), yHeight*(1/4));
+    image(sprites[0], xWidth*(-40/800), yHeight*(-30/600), xWidth*(360/800), yHeight*(810/600));
     noStroke();
     fill(37, 58, 107);
     rect(xWidth*(3.25/8.0), yHeight*(4.0/6.0), xWidth*0.5, yHeight*(1.0/6.0));
@@ -138,7 +139,7 @@ function runState(state){
     clear();
     //console.log(script[state]);
     image(bg, 0, 0, xWidth, yHeight);
-    fill(255,255,255);
+    fill(0,0,0);
     textAlign(LEFT,TOP);
     textSize(yHeight*0.05);
     if(script[state][0] != "SCORE SHOW"){
@@ -146,19 +147,19 @@ function runState(state){
     } else {
         text(currentScore(), xWidth*(3.2/8.0), yHeight*(7.0/60.0), xWidth*(4.1/8.0), yHeight*(2.6/6.0));
     }
-    image(sprites[script[state][1]], xWidth*(1.0/16), yHeight*(1/4));
+    image(sprites[script[state][1]], xWidth*(-40/800), yHeight*(-30/600), xWidth*(360/800), yHeight*(810/600));
 
     if(script[state][2]){
-        fill(37, 58, 107);
-        rect(xWidth*(300/800), yHeight*(375/600), xWidth*(200/800), yHeight*(50/600)); 
-        rect(xWidth*(550/800), yHeight*(375/600), xWidth*(200/800), yHeight*(50/600)); 
-        rect(xWidth*(300/800), yHeight*(475/600), xWidth*(200/800), yHeight*(50/600)); 
-        rect(xWidth*(550/800), yHeight*(475/600), xWidth*(200/800), yHeight*(50/600));
+        // fill(37, 58, 107);
+        // rect(xWidth*(300/800), yHeight*(375/600), xWidth*(200/800), yHeight*(50/600)); 
+        // rect(xWidth*(550/800), yHeight*(375/600), xWidth*(200/800), yHeight*(50/600)); 
+        // rect(xWidth*(300/800), yHeight*(475/600), xWidth*(200/800), yHeight*(50/600)); 
+        // rect(xWidth*(550/800), yHeight*(475/600), xWidth*(200/800), yHeight*(50/600));
         fill(255,255,255);
-        text(script[state][3], xWidth*(300/800), yHeight*(375/600), xWidth*(200/800), yHeight*(50/600)) 
-        text(script[state][5], xWidth*(550/800), yHeight*(375/600), xWidth*(200/800), yHeight*(50/600)) 
-        text(script[state][7], xWidth*(300/800), yHeight*(475/600), xWidth*(200/800), yHeight*(50/600)) 
-        text(script[state][9], xWidth*(550/800), yHeight*(475/600), xWidth*(200/800), yHeight*(50/600)) 
+        text(script[state][3], xWidth*(300/800), yHeight*(400/600), xWidth*(200/800), yHeight*(50/600)) 
+        text(script[state][5], xWidth*(550/800), yHeight*(400/600), xWidth*(200/800), yHeight*(50/600)) 
+        text(script[state][7], xWidth*(300/800), yHeight*(500/600), xWidth*(200/800), yHeight*(50/600)) 
+        text(script[state][9], xWidth*(550/800), yHeight*(500/600), xWidth*(200/800), yHeight*(50/600)) 
         gameState = script[state][4];
     } else {
         fill(37, 58, 107);
